@@ -5,11 +5,20 @@ FastAPI&amp;GraphQLでサンプルAPIを作成
 
 Python3.9
 
-## Install&Run
+## Install
 
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
+(venv) $ docker-compose up -d
+```
+
+## Run
+
+```bash
+(venv) $ alembic init alembic
+(venv) $ docker-compose run app alembic revision --autogenerate -m "New Migration" 
+(venv) $ docker-compose run app alembic upgrade head
 (venv) $ docker-compose up -d
 ```
 
